@@ -2,11 +2,8 @@
 
 
 // create base grid
-let size = 16;
 const container = document.querySelector('#container');
-createGrid();
-
-
+createGrid(16);
 
 
 // hover over
@@ -22,6 +19,17 @@ for (let i=0; i<test.length; i++) {
     );
 }
 
+// create new grid
+const newGrid = document.querySelector('#newGrid');
+newGrid.addEventListener('click', () => {
+    // check if container has a first child; remove last child until container doesn't have first child
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    }
+    let s = prompt("Enter size");
+    createGrid(s);
+})
+
 // clear grid
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', () => {
@@ -33,7 +41,7 @@ clear.addEventListener('click', () => {
 })
 
 // create grid function
-function createGrid() {
+function createGrid(size) {
     for (let i=0; i<size*size; i++) {
         const squares = document.createElement('div');
         squares.classList.add('square');

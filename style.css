@@ -6,12 +6,15 @@ body {
 
 .square {
     border: solid black 1px;
-    height: 20px;
+    height: auto;
     width: 20px;
+    flex: 1 1 auto;*/
 }
 
 #container {
+    position: relative;
     display: flex;
+    height: 360px;
     width: 360px;
     flex-wrap: wrap;
     padding: 20px;
