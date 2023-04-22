@@ -1,9 +1,19 @@
 // etch-a-sketch script
 
 let color = 'black';
+
+// slider
+let slider = document.getElementById("myRange");
+let output = document.getElementById("sliderValue");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
+
 // create base grid
 const container = document.querySelector('#container');
-createGrid(16);
+createGrid(slider.value);
 
 
 // create new grid
@@ -13,9 +23,8 @@ newGrid.addEventListener('click', () => {
     while (container.firstChild) {
         container.removeChild(container.lastChild);
     }
-    let s = prompt("Enter size");
-    color = 'black';
-    createGrid(s);
+    //let s = prompt("Enter size");
+    createGrid(slider.value);
 })
 
 // clear grid
@@ -33,11 +42,15 @@ const randomColor = document.querySelector('#randomRGB');
 randomColor.addEventListener('click', () => {
     if (color == 'black') {
         color = 'red';
+        randomColor.textContent = 'Black'
     }
     else {
         color = 'black';
+        randomColor.textContent = 'Rainbow'
     }
 })
+
+
 
 // create grid function
 function createGrid(size) {
@@ -61,7 +74,14 @@ function createGrid(size) {
         test[i].addEventListener(
         "mouseover",
         (event) => {
-            event.target.style.backgroundColor = color;
+            if (color == 'black') {
+                event.target.style.backgroundColor = color;
+            }
+            else {
+                // random color
+                event.target.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+            }
+            
         },
         false
         );
