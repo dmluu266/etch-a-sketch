@@ -1,20 +1,15 @@
 body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
 }
 
-/*.square {
-    border: solid black 1px;
-}*/
-
 #container {
-    /*position: relative;*/
     display: grid;
     border: solid black 1px;
     height: 540px;
     width: 540px;
-
+    background-color: white;
 }
 
 h1 {
@@ -22,6 +17,53 @@ h1 {
 }
 
 #footer {
+    /*border: 1px solid black;*/
     margin: 20px;
-    
+    width: 540px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slideContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.barValue {
+    display: flex;
+}
+
+#myRange {
+    width: 300px;
+}
+
+#sliderValue {
+    font-weight: bold;
+}
+
+#randomRGB, #clear{
+    border: solid black 3px;
+    border-radius: 50%;
+    width: 80px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(223, 111, 130);
+}
+
+#newGrid {
+    border-radius: 12px;
+    border: solid black 3px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(223, 111, 130);
+}
+
+#etchBorder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 50%;
+    background-color: pink;
+    border-radius: 16px;
 }

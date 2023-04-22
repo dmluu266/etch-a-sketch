@@ -61,14 +61,13 @@ function createGrid(size) {
     for (let i=0; i<size*size; i++) {
         const squares = document.createElement('div');
         squares.classList.add('square');
-        /*container.appendChild(squares);*/
         container.insertAdjacentElement("beforeend", squares);
     }
 
 
 
     // hover over
-    const test = document.getElementsByClassName("square")
+    const test = document.getElementsByClassName("square");
 
     for (let i=0; i<test.length; i++) {
         test[i].addEventListener(
